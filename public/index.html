@@ -110,14 +110,14 @@
     </div>
 </div>
 
-<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 <script>
-    const socket = io();
+    const socket = io("https://biche-backend.onrender.com");
     let myName = "";
     let currentChat = "";
 
     async function register() {
-        await fetch("/register", {
+        await fetch("https://biche-backend.onrender.com/register", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify({
@@ -129,7 +129,7 @@
     }
 
     async function login() {
-        const res = await fetch("/login", {
+        const res = await fetch("https://biche-backend.onrender.com/login", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify({
